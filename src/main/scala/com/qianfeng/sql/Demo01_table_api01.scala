@@ -3,6 +3,7 @@ package com.qianfeng.sql
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.table.api.scala.StreamTableEnvironment
 import org.apache.flink.api.scala._
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.table.api.Table
 import org.apache.flink.types.Row
 /**
@@ -22,7 +23,7 @@ object Demo01_table_api01 {
         val fields: Array[String] = line.split(" ")
         (fields(0), fields(1), fields(2).trim.toLong, fields(3).trim.toLong)
       })
-
+    FlinkKafkaConsumer
     //table操作需要基于StreamTableEnvironment，，为表获取数据源
     //流转换成table
     var table: Table = tenv.fromDataStream(ds)
