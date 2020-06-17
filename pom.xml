@@ -153,6 +153,13 @@
             <version>1.9.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--flink-cep的依赖-->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-cep-scala_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
     </dependencies>
 
 
